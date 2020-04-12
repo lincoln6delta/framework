@@ -18,12 +18,11 @@
     <!-- FIXME: Replace toolbar with appbar.. -->
     <style name="ToolBarTheme" parent="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
         <item name="homeAsUpIndicator">@drawable/ic_action_navigation_menu</item>
-        <item name="homeAsUpIndicator">@drawable/ic_action_navigation_menu</item>
     </style>
 
     <style name="ViewSeparator">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">1dp</item>
-        <item name="background">#cccccc</item>
+       <!-- <item name="background">#cccccc</item> -->
     </style>
 </resources>

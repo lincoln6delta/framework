@@ -193,8 +193,8 @@ public class OdooActivity extends OdooCompatActivity {
         mDrawerItemContainer.removeAllViews();
         List<ODrawerItem> items = DrawerUtils.getDrawerItems(this);
 
+        //FIX ME: Re-implement OAddons.java, Addons.java
         Customers customers = new Customers();
-
         items.addAll(customers.drawerMenus(this));
 
 

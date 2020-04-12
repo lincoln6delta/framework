@@ -19,7 +19,7 @@
                 android:layout_height="200dp"
                 android:layout_gravity="center"
                 android:scaleType="centerCrop"
-                android:src="@drawable/odoo_office_bg" />
+                app:srcCompat="@drawable/odoo_office_bg" />
 
         </FrameLayout>
 

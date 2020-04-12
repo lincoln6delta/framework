@@ -19,9 +19,9 @@
  */
 package com.odoo.core.utils;
 
-import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.support.v7.app.AlertDialog;
 import android.text.TextUtils;
 import android.util.TypedValue;
 import android.widget.EditText;

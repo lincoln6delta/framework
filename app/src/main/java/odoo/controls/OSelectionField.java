@@ -20,7 +20,6 @@
 package odoo.controls;
 
 import android.annotation.TargetApi;
-import android.app.AlertDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -29,8 +28,8 @@ import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.content.LocalBroadcastManager;
+import android.support.v7.app.AlertDialog;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;

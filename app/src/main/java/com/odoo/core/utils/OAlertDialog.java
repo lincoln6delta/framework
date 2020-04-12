@@ -19,8 +19,8 @@
  */
 package com.odoo.core.utils;
 
-import android.app.AlertDialog;
 import android.content.Context;
+import android.support.v7.app.AlertDialog;
 
 import com.odoo.R;
 

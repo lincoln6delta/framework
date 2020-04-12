@@ -32,7 +32,7 @@
                 android:clickable="false"
                 android:fitsSystemWindows="true"
                 android:scaleType="centerCrop"
-                android:src="@drawable/user_xlarge"
+                app:srcCompat="@drawable/user_xlarge"
                 app:layout_collapseMode="parallax" />
 
             <View

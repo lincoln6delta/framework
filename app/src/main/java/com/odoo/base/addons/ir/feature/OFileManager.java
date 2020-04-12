@@ -21,8 +21,6 @@ package com.odoo.base.addons.ir.feature;
 
 import android.Manifest;
 import android.annotation.TargetApi;
-import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.ActivityNotFoundException;
 import android.content.ContentResolver;
 import android.content.ContentValues;
@@ -36,6 +34,8 @@ import android.os.Build;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
 import android.provider.OpenableColumns;
+import android.support.v7.app.AlertDialog;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Base64;
 import android.util.Log;
 import android.webkit.MimeTypeMap;
@@ -63,7 +63,6 @@ import java.net.FileNameMap;
 import java.net.URLConnection;
 
 import static android.widget.Toast.LENGTH_SHORT;
-import static android.widget.Toast.makeText;
 
 public class OFileManager implements DialogInterface.OnClickListener {
     public static final String TAG = OFileManager.class.getSimpleName();
@@ -434,7 +433,7 @@ public class OFileManager implements DialogInterface.OnClickListener {
     }
 
     public OValues handleResult(int requestCode, int resultCode, Intent data) {
-        if (resultCode == Activity.RESULT_OK) {
+        if (resultCode == AppCompatActivity.RESULT_OK) {
             switch (requestCode) {
                 case REQUEST_CAMERA:
                 case REQUEST_HIGH_CAMERA:

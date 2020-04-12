@@ -64,7 +64,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:showDividers="middle"
-        android:divider="?android:attr/dividerVertical"
+        android:divider="?attr/dividerVertical"
         android:orientation="horizontal">
 
         <Button
@@ -73,7 +73,7 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent"
-            android:background="?android:selectableItemBackground"
+            android:background="?attr/selectableItemBackground"
             android:gravity="center"
             android:fontFamily="@string/font_normal"
             android:padding="@dimen/default_16dp"
@@ -89,7 +89,7 @@
             android:layout_weight="1"
             android:fontFamily="@string/font_normal"
             android:layout_height="match_parent"
-            android:background="?android:selectableItemBackground"
+            android:background="?attr/selectableItemBackground"
             android:gravity="center"
             android:padding="@dimen/default_16dp"
             android:text="@string/label_cancel"

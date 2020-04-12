@@ -23,7 +23,7 @@
             <TextView
                 android:id="@+id/chatterSendMessage"
                 android:text="@string/label_send_message"
-                android:background="?android:attr/selectableItemBackground"
+                android:background="?attr/selectableItemBackground"
                 android:textAppearance="?android:textAppearanceSmall"
                 android:padding="@dimen/default_8dp"
                 android:layout_width="wrap_content"
@@ -54,7 +54,7 @@
 
             <TextView
                 android:id="@+id/chatterLogInternalNote"
-                android:background="?android:attr/selectableItemBackground"
+                android:background="?attr/selectableItemBackground"
                 android:textColor="@color/android_blue_dark"
                 android:textAppearance="?android:textAppearanceSmall"
                 android:padding="@dimen/default_8dp"
@@ -77,7 +77,7 @@
         <TextView
             android:id="@+id/chatterLoadMoreMessages"
             android:text="Load more..."
-            android:background="?android:attr/selectableItemBackground"
+            android:background="?attr/selectableItemBackground"
             android:textAppearance="?android:textAppearanceSmall"
             android:padding="@dimen/default_8dp"
             android:layout_marginBottom="@dimen/default_8dp"

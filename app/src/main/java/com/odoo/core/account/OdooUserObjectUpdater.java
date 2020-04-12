@@ -19,21 +19,20 @@
  */
 package com.odoo.core.account;
 
-import android.app.AlertDialog;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.AsyncTask;
+import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 
 import com.odoo.R;
 import com.odoo.core.auth.OdooAccountManager;
+import com.odoo.core.rpc.Odoo;
+import com.odoo.core.rpc.handler.OdooVersionException;
 import com.odoo.core.support.OUser;
 import com.odoo.core.utils.BitmapUtils;
 import com.odoo.core.utils.OControls;
-
-import com.odoo.core.rpc.Odoo;
-import com.odoo.core.rpc.handler.OdooVersionException;
 
 public class OdooUserObjectUpdater extends AlertDialog {
     public static final String TAG = OdooUserObjectUpdater.class.getSimpleName();

@@ -78,7 +78,7 @@
                     android:visibility="gone"
                     android:layout_gravity="right"
                     android:tint="@color/theme_secondary"
-                    android:src="@drawable/ic_action_file_attachment"
+                    app:srcCompat="@drawable/ic_action_file_attachment"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 

@@ -23,6 +23,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
@@ -46,6 +47,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.odoo.addons.customers.Customers;
 import com.odoo.core.account.AppIntro;
 import com.odoo.core.account.ManageAccounts;
 import com.odoo.core.account.OdooLogin;
@@ -190,6 +192,12 @@ public class OdooActivity extends OdooCompatActivity {
         mDrawerItemContainer = (LinearLayout) findViewById(R.id.drawerItemList);
         mDrawerItemContainer.removeAllViews();
         List<ODrawerItem> items = DrawerUtils.getDrawerItems(this);
+
+        Customers customers = new Customers();
+
+        items.addAll(customers.drawerMenus(this));
+
+
         for (ODrawerItem item : items) {
             View view = LayoutInflater.from(this).
                     inflate((item.isGroupTitle()) ? R.layout.base_drawer_group_layout :

@@ -458,7 +458,7 @@ public class OFileManager implements DialogInterface.OnClickListener {
         try {
             mActivity.startActivityForResult(intent, requestCode);
         } catch (ActivityNotFoundException e) {
-            makeText(mActivity, "No Activity Found to handle request",
+            Toast.makeText(mActivity, "No Activity Found to handle request",
                     LENGTH_SHORT).show();
         }
     }

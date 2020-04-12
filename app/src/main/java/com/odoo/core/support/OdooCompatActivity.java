@@ -42,4 +42,9 @@ public abstract class OdooCompatActivity extends AppCompatActivity {
         void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults);
     }
 
+    @Override
+    public void invalidateOptionsMenu() {
+        getDelegate().invalidateOptionsMenu();
+    }
+
 }

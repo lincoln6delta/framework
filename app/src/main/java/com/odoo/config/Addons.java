@@ -19,9 +19,15 @@
  */
 package com.odoo.config;
 
+import android.util.Log;
+
 import com.odoo.addons.customers.Customers;
 import com.odoo.core.support.addons.AddonsHelper;
 import com.odoo.core.support.addons.OAddon;
+
+import java.lang.reflect.Field;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Addons extends AddonsHelper {
 
@@ -34,4 +40,19 @@ public class Addons extends AddonsHelper {
      * OAddon partners = new OAddon(Partners.class).withSequence(2);
      */
     OAddon customers = new OAddon(Customers.class).setDefault();
+    //OAddon yourCustomAddon = new OAddon(yourCustomAddon.class);
+
+    public static final String TAG = Addons.class.getSimpleName();
+
+    //The field has to be instantiated, so that the prepareAddons method
+    //in AddonsHelper.java can see it. The constructor below does that.
+    //If you register a new addon, make sure you use it in a Log so it is instantiated.
+    public Addons() {
+        for (Field addon: getClass().getDeclaredFields()) {
+            Log.i(TAG, "Addons>Addons: " + customers);
+            //Log.i(TAG, "Your custom addon: " + yourCustomAddon);
+        }
+    }
+
+
 }

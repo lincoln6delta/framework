@@ -45,15 +45,15 @@ public class DrawerUtils {
 
     public static List<ODrawerItem> getDrawerItems(Context context) {
         List<ODrawerItem> items = new ArrayList<>();
-//        for (OAddon addon : new Addons().getAddons()) {
-//            IBaseFragment frag = (IBaseFragment) addon.get();
-//            if (frag != null) {
-//                List<ODrawerItem> menus = frag.drawerMenus(context);
-//                if (menus != null) {
-//                    items.addAll(menus);
-//                }
-//            }
-//        }
+        for (OAddon addon : new Addons().getAddons()) {
+            IBaseFragment frag = (IBaseFragment) addon.get();
+            if (frag != null) {
+                List<ODrawerItem> menus = frag.drawerMenus(context);
+                if (menus != null) {
+                    items.addAll(menus);
+                }
+            }
+        }
         items.addAll(DrawerUtils.baseSettingsItems(context));
         return items;
     }

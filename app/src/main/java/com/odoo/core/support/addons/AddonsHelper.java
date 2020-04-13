@@ -28,6 +28,7 @@ import java.util.List;
 
 public class AddonsHelper {
     public static final String TAG = AddonsHelper.class.getSimpleName();
+
     private List<OAddon> addons = new ArrayList<OAddon>();
     private OAddon defaultAddon = null;
 
@@ -42,7 +43,8 @@ public class AddonsHelper {
 
     private void prepareAddons() {
         addons.clear();
-        for (Field addon : getClass().getDeclaredFields()) {
+        Field[] myField = getClass().getDeclaredFields();
+        for (Field addon : myField) {
             if (addon.getType().isAssignableFrom(OAddon.class)) {
                 addon.setAccessible(true);
                 try {

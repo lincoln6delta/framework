@@ -28,9 +28,12 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
+import android.os.Build;
 import android.text.TextPaint;
 import android.util.Base64;
+import android.util.Log;
 
 import com.odoo.R;
 
@@ -117,7 +120,25 @@ public class BitmapUtils {
 
     public static Bitmap getAlphabetImage(Context context, String content) {
         Resources res = context.getResources();
-        Bitmap mDefaultBitmap = BitmapFactory.decodeResource(res, android.R.drawable.sym_def_app_icon);
+
+        //start fix: http://www.programmersought.com/article/8019649516/
+        Bitmap mDefaultBitmap = null;
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.LOLLIPOP) {
+            Drawable vectorDrawable = context.getDrawable(android.R.drawable.sym_def_app_icon);
+            mDefaultBitmap = Bitmap.createBitmap(vectorDrawable.getIntrinsicWidth(),
+                    vectorDrawable.getIntrinsicHeight(), Bitmap.Config.ARGB_8888);
+            Canvas canvas = new Canvas(mDefaultBitmap);
+            vectorDrawable.setBounds(0, 0, canvas.getWidth(), canvas.getHeight());
+            vectorDrawable.draw(canvas);
+        } else {
+            mDefaultBitmap = BitmapFactory.decodeResource(res, android.R.drawable.sym_def_app_icon);
+
+        }
+        //end fix
+
+        //original method
+        //Bitmap mDefaultBitmap = BitmapFactory.decodeResource(res, android.R.drawable.sym_def_app_icon);
+
         int width = mDefaultBitmap.getWidth();
         int height = mDefaultBitmap.getHeight();
         TextPaint mPaint = new TextPaint();

@@ -226,10 +226,20 @@ public class OForm extends LinearLayout {
         OValues values = getValues(false);
         if (mRecord != null && values != null) {
             for (String key : values.keys()) {
-                if (values.get(key).toString().equals("false") &&
-                        !mRecord.get(key).toString().equals("false")) {
-                    values.put(key, mRecord.get(key));
+                //We skip the key in the mRecord that has no value
+                try {
+                    mRecord.get(key).toString();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    Log.d(TAG, "key " + key + " resulted in null. Skipping." );
+                    continue;
                 }
+
+                if (!values.get(key).toString().equals("false") ||
+                        mRecord.get(key).toString().equals("false")) {
+                } else {
+            values.put(key, mRecord.get(key));
+        }
             }
         }
         return values;

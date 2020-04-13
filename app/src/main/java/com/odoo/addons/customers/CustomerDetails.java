@@ -25,6 +25,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -163,6 +164,7 @@ public class CustomerDetails extends OdooCompatActivity
 
     @Override
     public void onClick(View v) {
+        Log.i(TAG, "CustomerDetails>onClick: I am executed.");
         switch (v.getId()) {
             case R.id.full_address:
                 IntentUtils.redirectToMap(this, record.getString("full_address"));
@@ -220,6 +222,7 @@ public class CustomerDetails extends OdooCompatActivity
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        Log.i(TAG, "CustomerDetails>onOptionsItemSelected: I am executed");
         switch (item.getItemId()) {
             case android.R.id.home:
                 finish();
@@ -303,6 +306,7 @@ public class CustomerDetails extends OdooCompatActivity
 
     @Override
     public void onFieldValueChange(OField field, Object value) {
+        Log.i(TAG, "The value of value is: " + value);
         if (field.getFieldName().equals("is_company")) {
             Boolean checked = Boolean.parseBoolean(value.toString());
             int view = (checked) ? View.GONE : View.VISIBLE;

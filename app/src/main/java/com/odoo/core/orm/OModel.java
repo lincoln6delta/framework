@@ -346,6 +346,20 @@ public class OModel implements ISyncServiceListener {
                 for (Annotation annotation : annotations) {
                     // Check for odoo api annotation
                     Class<? extends Annotation> type = annotation.annotationType();
+                    System.out.println("The declaring class is: " + type.getDeclaringClass());
+                    Log.i(TAG, "The declaring class is: " + type.getDeclaringClass());
+
+                    //a simple try-catch statement to catch null declaring classes.
+                    //i know :)
+                    try {
+                        type.getDeclaringClass().isAssignableFrom(Odoo.api.class);
+                    }
+                    catch(Exception e) {
+                        e.printStackTrace();
+                        continue;
+                    }
+
+
                     if (type.getDeclaringClass().isAssignableFrom(Odoo.api.class)) {
                         switch (mOdooVersion.getVersionNumber()) {
                             case 11:
